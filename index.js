@@ -1,3 +1,16 @@
 #!/usr/bin/env node
 
-console.log( "Running tests" );
+const { testFiles } = require( './runner' );
+const runner = require( './runner' );
+
+
+const collectFiles = async () => {
+    await runner.collectFiles( process.cwd() );
+    await runner.runTest()
+
+}
+
+
+
+
+collectFiles()
